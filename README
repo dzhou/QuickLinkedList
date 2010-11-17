@@ -1,0 +1,22 @@
+@author Kefei Dan Zhou
+@date 11/2010 
+
+An efficient java List i designed back in my earlier days of programming (about 4 years ago)
+
+- - - - - - - 
+
+Description/idea 
+
+QuickListedList stores the elements internally as several arraylist of specified size.
+It takes advantage of basic operations of both LinkedList and ArrayList thus
+the list is not synchronized and at worst case, the performance is roughly equivalent
+to that of either LinkedList or ArrayList.
+ 
+Since the internal sublists are stored as ArrayLists, for operations such as add,
+get, and indexOf, QuickLinkedList is almost equivalent to ArrayList in terms of performance.
+However for operation such as add and remove to an index position, the QuickLinkedList can
+be potentially several magnitudes faster than ArrayList and LinkedList.
+ 
+QuickLinkedList is designed and optimized to handle large number of elements. In
+fact, the default size of the sublist is 1000, which means for list containing less
+than 1000 elements, the QuickLinkedList is essentially an ArrayList.
